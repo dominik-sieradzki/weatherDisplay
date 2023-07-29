@@ -14,7 +14,7 @@
       <template v-for="(weatherPayload) in weatherData.list" :key="weatherPayload.time">
         <div class="col">{{ weatherPayload.dt_txt }}</div>
         <div class="col">{{ weatherPayload.main.temp }}°C</div>
-        <div class="col weather-description">{{ weatherPayload.weather[0].description}} <img :src="getWeatherIcon(weatherPayload.weather[0].main)" class="weather-icon" /></div>
+        <div class="col weather-description">{{ weatherPayload.weather[0].description}} <img alt="" :src="getWeatherIcon(weatherPayload.weather[0].main)" class="weather-icon" /></div>
         <div class="w-100"></div>
       </template>
     </div>
