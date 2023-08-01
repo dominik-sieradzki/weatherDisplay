@@ -1,6 +1,4 @@
 <script setup>
-
-//import CityForecast from "@/components/CityForecast.vue";
 </script>
 
 <template>
@@ -19,12 +17,11 @@
       </template>
     </div>
   </div>
-  <button @click="removeCity(weatherData.id)">Remove City</button>
+  <button @click="() => removeCity(weatherData.id, weatherData.city.name)">Remove City</button>
 
 </template>
 
 <script>
-//import WeatherIcon from "./WeatherIcon.vue";
 
 export default {
   props: {
@@ -34,8 +31,8 @@ export default {
     }
   },
   methods: {
-    removeCity(id) {
-      this.$emit("remove-city", id);
+    removeCity(id, name) {
+      this.$emit("remove-city", {id:id, name:name});
     },
     getWeatherIcon(icon) {
       // Replace 'icons/' with the folder path where your weather icons are stored
